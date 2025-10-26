@@ -1,6 +1,6 @@
 // AdminDashboard.js
 // VERSI UNDO (Tanpa Editor Booklet, tapi dengan Tab Pengaturan URL)
-// Dengan perbaikan kecil di blok catch fetchPatients
+// Dengan perbaikan kecil di blok catch fetchPatients DAN console.log untuk onLoginSuccess
 
 import React, { useState, useEffect } from 'react';
 import PatientTable from './PatientTable';
@@ -131,14 +131,12 @@ const AdminDashboard = () => {
       } else { throw new Error('Invalid response format'); }
     } catch (error) {
       console.error('💥 Error fetching patients:', error);
-      // --- PERBAIKAN DI BLOK CATCH INI ---
       let errorMessage = error.response?.data?.error || error.message || 'Terjadi kesalahan tidak diketahui';
       if (error.response?.status === 401) {
         errorMessage = 'Sesi Anda telah berakhir, silakan login kembali.';
-        clearAuthData(); // Tetap panggil clearAuthData di sini
+        clearAuthData();
       }
-      setError(errorMessage); // Set error state
-      // --- AKHIR PERBAIKAN ---
+      setError(errorMessage);
     } finally { setLoading(false); }
   };
 
@@ -185,7 +183,13 @@ const AdminDashboard = () => {
   const handlePrevPage = () => { if (currentPage > 1) setCurrentPage(currentPage - 1); };
 
   if (loading && !authChecked) { return <div className="loading-container"><div className="loading-spinner"></div><p>Memeriksa autentikasi...</p></div>; }
-  if (!isAuthenticated) { return <Login onLoginSuccess={handleLoginSuccess} />; }
+
+  // --- Console Log Ditambahkan Di Sini ---
+  if (!isAuthenticated) {
+    console.log('[AdminDashboard] Rendering Login - Passing onLoginSuccess, type:', typeof handleLoginSuccess); // Log tipe prop
+    return <Login onLoginSuccess={handleLoginSuccess} />;
+  }
+  // --- Akhir Penambahan Console Log ---
 
   return (
     <div className="admin-dashboard">
