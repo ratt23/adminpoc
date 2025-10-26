@@ -1,0 +1,475 @@
+.user-management {
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-management-header {
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.user-management-header h2 {
+  color: #2c3e50;
+  margin: 0 0 5px 0;
+  font-size: 24px;
+}
+
+.user-management-header p {
+  color: #7f8c8d;
+  margin: 0;
+  font-size: 14px;
+}
+
+.users-table-container {
+  overflow-x: auto;
+  margin-bottom: 30px;
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.users-table th {
+  background: #2c3e50;
+  color: white;
+  padding: 16px 12px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+}
+
+.users-table td {
+  padding: 16px 12px;
+  border-bottom: 1px solid #ecf0f1;
+  font-size: 14px;
+  vertical-align: top;
+}
+
+.users-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.users-table tbody tr.current-user {
+  background-color: #fff3cd;
+}
+
+.username-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.you-badge {
+  background: #ffc107;
+  color: #856404;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.role-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.role-admin {
+  background: #d4edda;
+  color: #155724;
+}
+
+.role-admin_poc {
+  background: #cce7ff;
+  color: #004085;
+}
+
+.role-exporter {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.permissions-cell {
+  max-width: 200px;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.status-active {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status-inactive {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.btn-edit-password {
+  background: #2b3b98;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-edit-password:hover:not(:disabled) {
+  background: #222f7a;
+  transform: translateY(-1px);
+}
+
+.btn-edit-password:disabled {
+  background: #95a5a6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Password Modal */
+.password-modal {
+  max-width: 500px;
+}
+
+.password-modal h3 {
+  color: #2b3b98;
+  margin-bottom: 10px;
+}
+
+.password-modal p {
+  color: #7f8c8d;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.password-modal .form-group {
+  margin-bottom: 20px;
+}
+
+.password-modal .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.password-modal .form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+.password-modal .form-group input:focus {
+  outline: none;
+  border-color: #2b3b98;
+  box-shadow: 0 0 0 2px rgba(43, 59, 152, 0.2);
+}
+
+.password-modal .form-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 25px;
+}
+
+.password-modal .btn-cancel {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.password-modal .btn-cancel:hover {
+  background: #5a6268;
+}
+
+.password-modal .btn-submit {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.password-modal .btn-submit:hover {
+  background: #218838;
+}
+
+/* Info Box */
+.info-box {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 6px;
+  border-left: 4px solid #2b3b98;
+  margin-top: 30px;
+}
+
+.info-box h4 {
+  margin: 0 0 15px 0;
+  color: #2c3e50;
+  font-size: 16px;
+}
+
+.info-box ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #555;
+}
+
+.info-box li {
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.info-box strong {
+  color: #2c3e50;
+}
+
+/* Error and Success Messages */
+.error-message {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 12px 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  border: 1px solid #f5c6cb;
+}
+
+.success-message {
+  background: #d4edda;
+  color: #155724;
+  padding: 12px 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  border: 1px solid #c3e6cb;
+}
+
+.no-data {
+  text-align: center;
+  padding: 40px;
+  color: #7f8c8d;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .user-management {
+    padding: 15px;
+  }
+  
+  .users-table {
+    font-size: 12px;
+  }
+  
+  .users-table th,
+  .users-table td {
+    padding: 10px 8px;
+  }
+  
+  .password-modal {
+    margin: 20px;
+    width: calc(100% - 40px);
+  }
+  
+  .password-modal .form-actions {
+    flex-direction: column;
+  }
+  
+  .password-modal .btn-cancel,
+  .password-modal .btn-submit {
+    width: 100%;
+  }
+}
+/* === TAMBAHAN CSS UNTUK UserManagement.css === */
+
+/* Styling untuk grup tombol aksi di tabel */
+.action-buttons {
+  display: flex;
+  gap: 8px; /* Memberi jarak antar tombol */
+  flex-wrap: nowrap;
+}
+
+/* Styling umum untuk semua tombol aksi */
+.btn-action {
+  padding: 8px 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px; /* Membuat ikon lebih besar */
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 36px;
+  text-align: center;
+}
+
+.btn-action:disabled {
+  background: #95a5a6;
+  cursor: not-allowed;
+  transform: none;
+  opacity: 0.5;
+}
+
+/* Styling spesifik per tombol */
+.btn-edit-password {
+  background: #2b3b98; /* Biru */
+  color: white;
+}
+.btn-edit-password:hover:not(:disabled) {
+  background: #222f7a;
+}
+
+.btn-edit-role {
+  background: #ffc107; /* Kuning */
+  color: #333;
+}
+.btn-edit-role:hover:not(:disabled) {
+  background: #e0a800;
+}
+
+.btn-toggle-status {
+  background: #6c757d; /* Abu-abu */
+  color: white;
+}
+.btn-toggle-status:hover:not(:disabled) {
+  background: #5a6268;
+}
+
+.btn-delete-user {
+  background: #e74c3c; /* Merah */
+  color: white;
+}
+.btn-delete-user:hover:not(:disabled) {
+  background: #c0392b;
+}
+
+
+/* Styling untuk info user di dalam modal */
+.user-info-modal {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.user-info-modal p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Styling untuk helper text di dropdown role */
+.role-help {
+  font-size: 12px;
+  color: #6c757d;
+  margin-top: 6px;
+}
+/* === TAMBAHAN CSS UNTUK DANGER ZONE === */
+
+.danger-zone {
+  margin-top: 40px;
+  border: 2px solid #e74c3c; /* Border merah */
+  border-radius: 8px;
+  background-color: #fbeeee;
+}
+
+.danger-zone h4 {
+  margin: 0;
+  padding: 16px 20px;
+  background-color: #e74c3c;
+  color: white;
+  border-radius: 6px 6px 0 0;
+  font-size: 18px;
+}
+
+.danger-zone > p {
+  padding: 0 20px 10px 20px;
+  margin-top: 16px;
+  color: #721c24;
+}
+
+.danger-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-top: 1px solid #f5c6cb;
+}
+
+.danger-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.danger-info strong {
+  font-size: 16px;
+  color: #721c24;
+}
+
+.danger-info span {
+  font-size: 14px;
+  color: #721c24;
+  opacity: 0.8;
+}
+
+.btn-danger,
+.btn-submit-danger {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-danger:hover,
+.btn-submit-danger:hover:not(:disabled) {
+  background: #c0392b;
+}
+
+.btn-submit-danger:disabled {
+  background: #95a5a6;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Modal khusus untuk danger */
+.danger-modal .form-group input {
+  border-color: #e74c3c;
+  font-weight: bold;
+}
+.danger-modal .form-group input:focus {
+  border-color: #c0392b;
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.2);
+}
